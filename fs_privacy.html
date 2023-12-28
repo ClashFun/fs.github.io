@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+<head>
+<title>privacy</title>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>画质管家_隐私政策_副本</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='tigerfs-privacy-agreement'><span>TigerFs Privacy Agreement</span></h2><ul><li><span>Effective date: 2023.7.1</span></li><li><span>Update date: 2023.12.28</span></li></ul><p><span> This privacy policy applies to </span><strong><span>TigerFs</span></strong><span> products and services provided by </span><strong><span>SUN ELEGANT CONSULTANTS PRIVATE LIMITED</span></strong><span> (hereinafter referred to as our company). The TigerFs product client software in this privacy policy may involve different application versions. Users need to choose the software version that matches the installed mobile phone. The functions and services provided by different versions may be different. Our company is well aware of the importance of </span><strong><span>personal information</span></strong><span> to you and will do its best to protect the safety and reliability of your personal information. Our company is committed to maintaining your trust in our company and abides by the following principles to protect your personal information: </span><strong><span>Principle of consistency of rights and responsibilities, principle of clear purpose, principle of choice and consent, principle of least sufficient use, principle of ensuring security, principle of subject participation, and disclosure The principle of transparency, etc.</span></strong><span>. At the same time, our company promises that our company will take corresponding security protection measures to </span><strong><span>protect your personal information</span></strong><span> in accordance with the industry&#39;s mature </span><strong><span>security standards</span></strong><span>.</span></p><p><span>In order to better protect your personal information, we recommend that you read the updated privacy policy carefully. If you have any objections or questions about the terms of this Privacy Policy, you can contact our company through the contact information published in Article 9 of this Privacy Policy.</span></p><h3 id='table-of-contents'><span>Table of contents</span></h3><ol start='' ><li><span>Scope and methods of possible collection of personal information</span></li><li><span>List and purposes of permissions required for APP installation and operation</span></li><li><span>Instructions for collecting usage information through third-party SDK</span></li><li><span>How our company uses cookies and similar technologies</span></li><li><span>How our company shares, transfers and publicly discloses your personal information</span></li></ol><p><span> 6. How our company protects your personal information</span></p><ol start='7' ><li><span>Your rights</span></li><li><span>How to update this privacy policy</span></li><li><span>How to contact our company</span></li></ol><h4 id='1-scope-and-methods-of-possible-collection-of-personal-information'><span>1. Scope and methods of possible collection of personal information</span></h4><ol start='' ><li><span>Definition of personal information and personal sensitive information</span></li></ol><p><span>Personal information refers to various information recorded electronically or in other ways that can identify a specific natural person alone or in combination with other information or reflect the activities of a specific natural person. The actual specific types of personal information collected by our company are subject to the description below. Sensitive personal information refers to personal information that, once leaked, illegally provided or misused, may endanger personal and property safety, and can easily lead to damage to personal reputation, physical and mental health, or discriminatory treatment. The actual specific types of personal sensitive information collected by our company are as described below.</span></p><ol start='2' ><li><span>How our company collects and uses your personal information</span></li></ol><ul><li><span>Used to register and log in</span></li></ul><p><span>In order to complete the creation, association or login of the account, we will collect all kinds of information you provide when creating an account on the &quot;TigerFs&quot; platform, such as equipment brand and model information.</span></p><ul><li><span>For mobile phone diagnosis</span></li></ul><p><span> When you use the mobile phone diagnostic function, our company will collect your mobile phone brand, mobile phone model, address MAC, android system version, device unique device identification code, network status, screen size, memory usage, APP user information, operator, IP address, DNS server address, used for your mobile client error information collection and bug diagnosis.</span></p><ul><li><span>Used for product adaptation and ensuring safe operation</span></li></ul><p><span>In order for our company&#39;s products to adapt to your device and operate normally, to provide you with problem diagnosis or device detection services and to conduct data statistics, we will collect your hardware model, operating system version, device configuration, unique device identifier (IMEI ), network device hardware address MAC, advertising identifier IDFA information, device connection information and device status information, network identity information; the aforementioned information is necessary to provide Internet mobile application services, based on different systems (Android/ISO) device information The text is different. This information is collected to help us carry out security protection work such as BUG analysis, anti-cheating, and anti-blackmail, to ensure your normal use of this product or service, to improve and optimize our product experience, and to protect the security of your account.</span></p><p><span> Please be informed that in order to help us conduct BUG analysis, anti-cheating, and anti-black product security protection, ensure your normal use of this product and/or service, improve and optimize our product experience, and protect the security of your account, in your When TigerFs switches to the background or TigerFs is in silent state, we will collect your MAC address information (including mobile phone MAC address and Bluetooth MAC address) and IMEI.</span></p><ol start='3' ><li><span>You understand and agree that in the following circumstances, our company does not need to obtain your authorization to collect and use your personal information:</span></li></ol><ul><li><span>Relevant to our company’s performance of obligations stipulated in laws and regulations;</span></li><li><span>Directly related to national security and national defense security;</span></li><li><span>Directly related to public safety, public health, and major public interests;</span></li><li><span>Directly related to criminal investigation, prosecution, trial and execution of judgment;</span></li><li><span>To protect your or other individuals&#39; life, property and other major legitimate rights and interests but it is difficult to obtain your authorization and consent;</span></li><li><span>The information about you is disclosed to the public by yourself;</span></li><li><span>Necessary to enter into and perform a contract at your request;</span></li><li><span>Collect your personal information from legally publicly disclosed information, such as legal news reports, government information disclosure and other channels;</span></li><li><span>Necessary to maintain the safe and stable operation of TigerFs products or services provided, such as discovering and handling product or service failures;</span></li><li><span>Other situations stipulated by laws, regulations, etc.;</span></li></ul><h4 id='2-list-and-purposes-of-permissions-required-for-app-installation-and-operation'><span>2. List and purposes of permissions required for APP installation and operation</span></h4><ul><li><p><span>Photo album and storage permission: When you agree to turn on this permission, we will use the photo album reading and storage functions on your device. This function will be used to upload text, images, videos and other content in the device for you, and can also cache the text, image, video content of the product during your use of TigerFs products and services. Please know that we will not automatically read the stored content of your local photo album. We will only obtain image and video data after you agree to enable this permission and actively select the corresponding picture in the album. If you refuse this authorization, the aforementioned functions will not work properly, but it will not affect your use of other functions of TigerFs.</span></p></li><li><p><span>Notifications: All notifications sent to users can be sent via text messages or through system notifications, private messages, or page announcements within the TigerFs service. Our company will deliver messages to users through one of the above methods to inform them of modifications to the terms of service, service changes, etc.</span></p></li><li><p><span>Sensor: We will use the acceleration sensor and distance sensor functions on your device to identify the horizontal screen status of your device, adapt your model display, and implement advertising monitoring.</span></p></li><li><p><span>Background operation permissions: In order to provide you with more convenient, better and comprehensive services, strive to improve your experience, ensure that users can receive messages in time when using the app, and ensure the stability of information, we need to collect your background operation permissions. , if you do not provide these services, it will not affect your use of the basic server of our products, but you may not be able to obtain the user experience that this service brings to you.</span></p></li><li><p><span>WiFi information: Read the WIFI scan results, read the WiFi list and device hotspot information (SSID, BSSID), so that users can quickly connect to the device through WLAN.</span></p></li><li><p><span>To ensure the normal operation of this software and services</span></p><ul><li><span>A. [Device Information] In order to ensure your normal use of this product and/or service and the security of your account, we will collect device attribute information (including your hardware model, operating system version, network device hardware address MAC, Android ID, SERIAL, OAID), software list information (including currently installed application software list, currently or recently run software list), device connection information (telecom operator, language used)</span></li><li><span>B. [Log Information] In order to ensure your safe use of this product and/or service, our server may automatically record some information, including your use of our products and/or services, IP address and language used, Information about downloading, installing or using the software, as well as the date, time and service log information of accessing the service (including service failure information). Please note that the above information does not include content you may send or share through the use of relevant applications, services or websites. At the same time, we will also encrypt the information to ensure the security of the information.</span></li></ul></li><li><p><span>Instructions for self-start and associated startup:</span></p><ul><li><span>In order to ensure that the application can normally receive the information pushed by the client when it is closed or running in the background, the application must use the (self-starting) capability, and there will be a certain frequency of sending broadcasts through the system to wake up the application&#39;s self-starting or associated startup behavior. It is necessary to realize functions and services.</span></li><li><span>When you open a content push message, the relevant content will be redirected to you after obtaining your explicit consent. There will be no self-initiation or associated activation without your consent.</span></li><li><span>When you open a file downloaded within this App, the third-party App will be launched in association with it.</span></li></ul></li><li><p><span>Personalized recommendations: Based on the information you provide us, we will provide you with relevant resource recommendation services in the form of &quot;recommendations&quot; on the homepage to facilitate a more effective experience for you.</span></p><ul><li><span>We also provide you with the corresponding exit mechanism, click &quot;My&quot;-&quot;Software Settings&quot;-&quot;Personalized Recommendations&quot;. After closing, we will no longer actively provide you with personalized recommendation services unless you voluntarily and actively enable this permission.</span></li></ul></li></ul><h4 id='4-how-our-company-uses-cookies-and-similar-technologies'><span>4. How our company uses cookies and similar technologies</span></h4><p><span>In order to collect the aforementioned personal information, our company and third-party authorized partners may use technology to provide you with a more comprehensive experience by understanding and remembering your specific usage preferences and using the following technologies:</span></p><ul><li><span>Cookie: To ensure the normal operation of the client, our company will store a small data file named Cookie on your mobile device. Cookies usually contain identifiers, site names, and some numbers and characters. With the help of cookies, websites can store data about your behavior. Our company will not use Cookies for any purpose other than those stated in this Privacy Policy. You can manage or delete cookies according to your preferences.</span></li><li><span>SDK: SDK is a set of tools and/or code that our company embeds into the APP, allowing third-party authorized partners to collect information about how users interact with the service; please see Article 3 of this Agreement for related SDK</span></li></ul><h4 id='5-how-our-company-shares-transfers-and-publicly-discloses-your-personal-information'><span>5. How our company shares, transfers and publicly discloses your personal information</span></h4><h5 id='share'><span>Share</span></h5><p><span>Our company will not share your personal information with any company, organization or individual outside our company, except in the following circumstances:</span></p><ul><li><span>Have obtained your explicit authorization or consent in advance;</span></li><li><span>It is necessary to share your personal information in accordance with applicable laws and regulations, legal procedures, government mandatory orders or judicial rulings;</span></li><li><span>Within the scope required or permitted by law, it is necessary to provide your personal information to third parties in order to protect the interests, property or safety of the APP and its users or the public from damage;</span></li><li><span>Your personal information may be shared among our affiliated companies. Our company will only share necessary personal information, and such sharing is also subject to the purposes stated in this Privacy Policy. If the affiliated company wants to change the purpose of processing personal information, it will ask for your authorization and consent again;</span></li></ul><h5 id='transfer'><span>Transfer</span></h5><p><span>Our company will not transfer your personal information to any company, organization or individual, except in the following circumstances:</span></p><ul><li><span>After obtaining your explicit consent, our company will transfer your personal information to other parties;</span></li><li><span>When a merger, acquisition or bankruptcy liquidation is involved, if personal information is transferred, our company will require the new company or organization that holds your personal information to continue to be bound by this privacy policy. Otherwise, our company will require the company or organization to hold your personal information. The organization will ask you for authorization again.</span></li></ul><h5 id='public-disclosure'><span>Public Disclosure</span></h5><p><span>Our company will only publicly disclose your personal information under the following circumstances:</span></p><ul><li><span>After obtaining your explicit consent;</span></li><li><span>Disclosure based on law: Our company may publicly disclose your personal information when required by law, legal proceedings, litigation or government authorities.</span></li></ul><h4 id='6-how-our-company-protects-your-personal-information'><span>6. How our company protects your personal information</span></h4><ul><li><span>Our company has used security protection measures that comply with industry standards to protect the personal information you provide to prevent data from unauthorized access, public disclosure, use, modification, damage or loss. Our company will take all reasonable and feasible measures to protect your personal information. For example, our company uses encryption technology to ensure the confidentiality of data; our company will use trusted protection mechanisms to prevent data from malicious attacks; our company will deploy access control mechanisms to ensure that only authorized personnel can access personal information; and our company will Conduct security and privacy protection training courses to enhance employees’ awareness of the importance of protecting personal information.</span></li><li><span>The personal information collected and generated by our company within the territory of the People&#39;s Republic of China will be stored within the territory of the People&#39;s Republic of China, and no data will be exported abroad.</span></li><li><span>Although the above reasonable and effective measures have been taken and the standards required by relevant legal regulations have been complied with, please understand that due to technical limitations and various possible malicious means, in the Internet industry, even if we do our best to strengthen security measures , it is impossible to always guarantee 100% security of information. Our company will try its best to ensure the security of the personal information you provide to us.</span></li></ul><p><span>You know and understand that the systems and communication networks you use to access our company&#39;s services may have problems due to factors beyond our control. Therefore, we strongly recommend that you take active measures to protect the security of your personal information, including but not limited to using complex passwords, changing your passwords regularly, and not disclosing your account password and related personal information to others.</span></p><h4 id='7-your-rights'><span>7. Your rights</span></h4><p><span>In accordance with relevant Chinese laws, regulations, standards, and common practices in other countries and regions, our company guarantees that you can exercise the following rights with respect to your personal information:</span></p><ul><li><p><span>Access your personal information</span></p></li><li><p><span>Correct your personal information</span></p><ul><li><span>When you find that the personal information about you processed by our company is incorrect, you have the right to ask our company to make corrections. You may request for correction through the methods listed in &quot;Access Your Personal Information&quot;.</span></li></ul></li><li><p><span>Delete your personal information</span></p><p><span>In the following situations, you can make a request to our company to delete personal information:</span></p><ul><li><span>If our company&#39;s handling of personal information violates laws and regulations;</span></li><li><span>If our company collects and uses your personal information without your consent;</span></li><li><span>If our company&#39;s handling of personal information violates the agreement with you;</span></li><li><span>If you no longer use our company&#39;s products or services, or you cancel your account;</span></li><li><span>If our company no longer provides products or services to you.</span></li></ul></li></ul><p><span>If our company decides to respond to your deletion request, our company will also notify the entities that obtained your personal information from our company and require them to delete it in a timely manner, unless otherwise provided by laws and regulations, or these entities obtain your independent authorization.</span></p><p><span>When you delete information from our company&#39;s services, our company may not immediately delete the corresponding information from the backup system.information, but this information will be deleted when the backup is updated.</span></p><ul><li><p><span>In the following circumstances, in accordance with legal and regulatory requirements, our company will not be able to respond to your request:</span></p><ul><li><span>Directly related to national security and national defense security;</span></li><li><span>Directly related to public safety, public health, and major public interests;</span></li><li><span>Directly related to criminal investigation, prosecution, trial and execution of judgment;</span></li><li><span>There is sufficient evidence that you have subjective malice or abused your rights;</span></li><li><span>Responding to your request will cause serious damage to the legitimate rights and interests of you or other individuals or organizations;</span></li><li><span>Involving trade secrets.</span></li></ul></li></ul><h4 id='8-how-to-update-this-privacy-policy'><span>8. How to update this privacy policy</span></h4><p><span>Our company&#39;s privacy policy may change. Without your explicit consent, our company will not reduce your rights under this privacy policy. Our Company will post any changes to this Privacy Policy on this page. For major changes, our company will also provide more prominent notices. Significant changes referred to in this Privacy Policy include but are not limited to:</span></p><ul><li><span>Our company&#39;s service model has undergone major changes. Such as the purpose of processing personal information, the type of personal information processed, the use of personal information, etc.;</span></li><li><span>Our company has undergone major changes in ownership structure, organizational structure, etc. Such as changes in owners caused by business adjustments, bankruptcy mergers, etc.;</span></li><li><span>The main recipients of personal information sharing, transfer or public disclosure change;</span></li><li><span>Significant changes in your rights to participate in the processing of personal information and how to exercise them;</span></li><li><span>When there are changes in the responsible department, contact information and complaint channels of our company responsible for handling personal information security;</span></li><li><span>When the personal information security impact assessment report indicates that there is a high risk.</span></li><li><span>Our company will also archive old versions of this Privacy Policy for your review.</span></li></ul><h4 id='9-how-to-contact-our-company'><span>9. How to contact our company</span></h4><p><span>If you have any questions, comments or suggestions about this privacy policy, you can contact our company through the following methods. Under normal circumstances, our company will reply to you within 15 working days.</span></p><p><strong><span>SUN ELEGANT CONSULTANTS PRIVATE LIMITED</span></strong></p></div></div>
+</body>
+</html>
